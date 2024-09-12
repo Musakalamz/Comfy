@@ -24,4 +24,3 @@ function About() {
 }
 
 export default About;
-About;

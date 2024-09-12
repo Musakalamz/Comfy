@@ -6,6 +6,7 @@ import hero3 from "../assets/hero3.webp";
 import hero4 from "../assets/hero4.webp";
 
 const carouselImages = [hero1, hero2, hero3, hero4];
+
 function Hero() {
   return (
     <div className=" grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">

@@ -57,12 +57,14 @@ function Navbar() {
             </ul>
           </div>
         </div>
+
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal ">
             {" "}
             <Navlinks />{" "}
           </ul>
         </div>
+
         <div className="navbar-end">
           {/* THEME ICONS */}
           <label className="swap swap-rotate ">
