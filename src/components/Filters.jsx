@@ -52,6 +52,7 @@ function Filters() {
         name="price"
         defaultValue={price}
         size="range-sm"
+        price={price}
       />
 
       {/* SHIPPING */}
