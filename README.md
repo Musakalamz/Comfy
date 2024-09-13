@@ -2870,7 +2870,6 @@ const cartSlice = createSlice({
       cartSlice.caseReducers.calculateTotals(state);
       toast.success("item added to cart");
     },
-    
     clearCart: (state) => {},
 
     removeItem: (state, action) => {},
