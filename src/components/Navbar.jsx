@@ -2,37 +2,42 @@ import { BsCart3, BsMoonFill, BsSunFill } from "react-icons/bs";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
 import Navlinks from "./Navlinks";
-import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+// import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
-const themes = {
-  winter: "winter",
-  dracula: "dracula",
-};
+// const themes = {
+//   winter: "winter",
+//   dracula: "dracula",
+// };
 
-const getThemeFromLocalStorage = () => {
-  return localStorage.getItem("theme") || themes.winter;
-};
+// const getThemeFromLocalStorage = () => {
+//   return localStorage.getItem("theme") || themes.winter;
+// };
 
 function Navbar() {
   //   const [theme, setTheme] = useState(false);
   // const [theme, setTheme] = useState(themes.winter);
-  const [theme, setTheme] = useState(getThemeFromLocalStorage());
+  // const [theme, setTheme] = useState(getThemeFromLocalStorage());
 
   //   const handleTheme = () => {
   //     setTheme(!theme);
   //   };
 
-  function handleTheme() {
-    const { winter, dracula } = themes;
-    const newTheme = theme === winter ? dracula : winter;
-    setTheme(newTheme);
-  }
+  // function handleTheme() {
+  //   const { winter, dracula } = themes;
+  //   const newTheme = theme === winter ? dracula : winter;
+  //   setTheme(newTheme);
+  // }
 
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem("theme", theme);
-  }, [theme]);
+  // useEffect(() => {
+  //   document.documentElement.setAttribute("data-theme", theme);
+  //   localStorage.setItem("theme", theme);
+  // }, [theme]);
+
+  const dispatch = useDispatch();
+  function handleTheme() {
+    dispatch(toggleTheme());
+  }
 
   const numItemsInCart = useSelector((state) => state.cartState.numItemsInCart);
 
