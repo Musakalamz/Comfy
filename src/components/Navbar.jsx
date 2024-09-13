@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import Navlinks from "./Navlinks";
 // import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { toggleTheme } from "../features/user/userSlice";
 
 // const themes = {
 //   winter: "winter",
