@@ -49,6 +49,7 @@ const cartSlice = createSlice({
 
       state.numItemsInCart -= product.amount;
       state.cartTotal -= product.price * product.amount;
+      
       cartSlice.caseReducers.calculateTotals(state);
       toast.error("Item removed from cart");
     },
@@ -60,6 +61,7 @@ const cartSlice = createSlice({
       state.numItemsInCart += amount - item.amount;
       state.cartTotal += item.price * (amount - item.amount);
       item.amount = amount;
+      
       cartSlice.caseReducers.calculateTotals(state);
       toast.success("Cart updated");
     },
