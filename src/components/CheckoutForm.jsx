@@ -33,9 +33,7 @@ export const action =
           },
         }
       );
-
       queryClient.removeQueries(["orders"]);
-
       store.dispatch(clearCart());
       toast.success("order placed successfully");
       return redirect("/orders");
@@ -44,7 +42,6 @@ export const action =
       const errorMessage =
         error?.response?.data?.error?.message ||
         "there was an error placing your order";
-
       toast.error(errorMessage);
       if (error?.response?.status === 401 || 403) return redirect("/login");
       return null;
@@ -54,11 +51,11 @@ export const action =
 function CheckoutForm() {
   return (
     <Form method="POST" className="flex flex-col gap-y-4">
-      <h4 className="font-medium text-xl">Shipping Information</h4>
+      <h4 className="font-medium text-xl capitalize">shipping information</h4>
       <FormInput label="first name" name="name" type="text" />
       <FormInput label="address" name="address" type="text" />
       <div className="mt-4">
-        <SubmitBtn text="Place Your Order" />
+        <SubmitBtn text="place your order" />
       </div>
     </Form>
   );
