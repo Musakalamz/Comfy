@@ -5,12 +5,12 @@ import { toast } from "react-toastify";
 import { loginUser } from "../features/user/userSlice";
 import { useDispatch } from "react-redux";
 
-export function action(store) {
-  return async ({ request }) => {
+export const action = (store) =>
+  async ({ request }) => {
     console.log(store);
     const formData = await request.formData();
     const data = Object.fromEntries(formData);
-    
+
     try {
       const response = await customFetch.post("/auth/local", data);
 
@@ -25,8 +25,8 @@ export function action(store) {
 
       toast.error(errorMessage);
       return null;
+    }
   };
-}
 
 function Login() {
   return (
