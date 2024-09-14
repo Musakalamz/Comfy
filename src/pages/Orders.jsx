@@ -38,6 +38,17 @@ export const loader =
   };
 
 function Orders() {
+  const { meta } = useLoaderData();
+  if (meta.pagination.total < 1) {
+    return (
+      <>
+        <SectionTitle text="Your Orders" />
+        <OrdersList />
+        <PaginationContainer />
+      </>
+    );
+  }
+
   return <h1 className="text-3xl">orders</h1>;
 }
 
